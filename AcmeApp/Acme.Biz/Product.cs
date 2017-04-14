@@ -73,9 +73,6 @@ namespace Acme.Biz
             }
         }
 
-        internal string Category { get; set; }
-        public int SequenceNumber { get; set; } = 1;
-
         public string ValidationMessage { get; set; }
 
         private string description;
@@ -108,6 +105,10 @@ namespace Acme.Biz
             set { productVendor = value; }
         }
 
+        public string Category { get; set; }
+        public int SequenceNumber { get; set; } = 1;
+
+        public string ProductCode => this.Category + "-" + this.SequenceNumber;
 
         public string SayHello()
         {
